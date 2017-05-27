@@ -1,0 +1,41 @@
+CREATE USER 'administrador'@'localhost' IDENTIFIED BY 'ADMUsuarios';
+
+GRANT CREATE ON USUARIOSDB.* TO 'administrador'@'localhost';
+GRANT DROP ON USUARIOSDB.* TO 'administrador'@'localhost';
+GRANT DELETE ON USUARIOSDB.* TO 'administrador'@'localhost';
+GRANT INSERT ON USUARIOSDB.* TO 'administrador'@'localhost';
+GRANT SELECT ON USUARIOSDB.* TO 'administrador'@'localhost';
+GRANT UPDATE ON USUARIOSDB.* TO 'administrador'@'localhost';
+FLUSH PRIVILEGES;
+exit;
+
+CREATE DATABASE UsuariosDB;
+
+USE USUARIOSDB;
+
+CREATE TABLE ADMIN(
+ID_ADM int (5) unsigned not null auto_increment,
+Nombre_ADM varchar(30) not null,
+Apellido_ADM varchar(30) not null,
+Documento_ADM varchar(80) not null,
+Contraseña_ADM varchar(80) not null,
+primary key (ID_ADM)
+);
+
+INSERT INTO ADMIN (Documento_ADM) VALUES ('4113326');
+
+97120110547 - Fabian123
+
+CREATE TABLE CLIENTES(
+ID_CLI int (5) unsigned not null auto_increment,
+Nombres_Cli varchar(200) not null,
+Apellidos_Cli varchar(200) not null,
+Documento_Cli varchar (100),
+Direccion_Cli varchar (200),
+Celular_Cli varchar (40),
+Telefono_Cli varchar (40),
+Comentarios varchar (600),
+primary key (ID_CLI)
+);
+
+

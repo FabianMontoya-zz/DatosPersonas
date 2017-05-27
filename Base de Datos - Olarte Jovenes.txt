@@ -1,0 +1,52 @@
+CREATE USER 'administrador'@'localhost' IDENTIFIED BY 'ADMUsuarios';
+
+GRANT CREATE ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+GRANT DROP ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+GRANT DELETE ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+GRANT INSERT ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+GRANT SELECT ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+GRANT UPDATE ON JovenesOlarteBD.* TO 'administrador'@'localhost';
+FLUSH PRIVILEGES;
+exit;
+
+mysql -u administrador -p ADMUsuarios
+
+//////
+
+CREATE DATABASE JovenesOlarteBD;
+
+USE JovenesOlarteBD;
+
+CREATE TABLE ADMIN(
+Nombre_ADM varchar(30),
+Apellido_ADM varchar(30),
+Documento_ADM varchar(80) not null,
+Contraseña_ADM varchar(80),
+primary key (Documento_ADM)
+);
+
+-- INSERT INTO ADMIN (Documento_ADM) VALUES ('97120110547');
+
+-- 97120110547 - Fabian123
+
+CREATE TABLE PERSONAS(
+ID_PER int (5) unsigned not null auto_increment,
+Nombres_PER varchar(100) not null,
+Apellidos_PER varchar(200) not null,
+TypeDocument_PER varchar (20),
+Documento_PER varchar (80),
+FecNacimiento_PER varchar (50),
+Direccion_PER varchar (300),
+Celular_PER varchar (40),
+Telefono_PER varchar (40),
+Bautizado_PER varchar (20),
+Sellado_PER varchar (20),
+Comentarios varchar (900),
+Usuario_Creacion varchar (80) not null,
+Fecha_Creacion varchar (100) not null,
+Usuario_Actualizacion varchar (80) not null,
+Fecha_Actualizacion varchar (100) not null,
+primary key (ID_PER)
+);
+
+
